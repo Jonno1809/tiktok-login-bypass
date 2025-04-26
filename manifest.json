@@ -10,5 +10,15 @@
       "matches": ["*://*.tiktok.com/*"],
       "js": ["tiktok-login-bypass.js"]
     }
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{3aa53768-cb55-4eaa-bccb-15a28f9c403c}",
+      "strict_min_version": "113.0"
+    },
+    "gecko_android": {
+      "id": "{3aa53768-cb55-4eaa-bccb-15a28f9c403c}",
+      "strict_min_version": "113.0"
+    }
+  }
 }
