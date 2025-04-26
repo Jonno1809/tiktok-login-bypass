@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Remove TikTok BS",
+  "version": "1.0",
+
+  "description": "Allows opening a TikTok video on mobile without needing to log in and make it fullscreen",
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.tiktok.com/*"],
+      "js": ["tiktok-bs-remover.js"]
+    }
+  ]
+}
