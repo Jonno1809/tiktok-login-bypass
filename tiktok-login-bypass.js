@@ -4,9 +4,9 @@ window.mobileCheck = function() {
     return check;
   };
 
-// if (!mobileCheck) {
-//     return;
-// }
+if (!mobileCheck) {
+    return;
+}
 
 function redirectToPageWithoutParams() {
     let urlWithoutParams = removeUrlSearchParameters(window.location.href);
