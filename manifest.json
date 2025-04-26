@@ -2,6 +2,7 @@
   "manifest_version": 3,
   "name": "TikTok Login Bypass",
   "version": "0.1",
+  "author": "Jonathan Simmons",
 
   "description": "Allows opening a TikTok video on mobile without needing to log in",
 
