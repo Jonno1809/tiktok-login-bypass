@@ -31,6 +31,13 @@ function redirectToPage(urlString) {
     window.location.assign(urlString);
 }
 
+redirectToPageWithoutParams();
+// TODO: fix "you do not have permissions" with direct video link
+// listenToVideoElementLoadedIn();
+
+/*** TODO: Functions below aren't actually used atm, more for if I want to redirect to the actual video one day instead of having all the 
+ * rest of the garbage there (like why are do all the hashtags take up half the screen??) */
+
 function getVideoUrlFromPage() {
     const videoElement = document.querySelector('.tiktok-web-player video') || document.querySelector('video');
     if (videoElement) {
@@ -38,7 +45,6 @@ function getVideoUrlFromPage() {
     }
     return;
 }
-
 
 function listenToVideoElementLoadedIn() {
     const observerConfig = { childList:true }; 
@@ -70,7 +76,3 @@ function listenToVideoElementLoadedIn() {
         observer.observe(appDivToListen, observerConfig);
     }
 }
-
-redirectToPageWithoutParams();
-// TODO: fix "you do not have permissions" with direct video link
-// listenToVideoElementLoadedIn();
