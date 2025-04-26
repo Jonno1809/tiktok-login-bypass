@@ -11,6 +11,7 @@ window.mobileCheck = function() {
 function redirectToPageWithoutParams() {
     let urlWithoutParams = removeUrlSearchParameters(window.location.href);
 
+    // Prevents looping
     if (urlWithoutParams !== window.location.href) {
         redirectToPage(urlWithoutParams);
     }
@@ -23,23 +24,21 @@ function removeUrlSearchParameters(urlString) {
         url.search = "";
     }
 
-    console.log('here')
     return url.href;
+}
+
+function redirectToPage(urlString) {
+    window.location.assign(urlString);
 }
 
 function getVideoUrlFromPage() {
     const videoElement = document.querySelector('.tiktok-web-player video') || document.querySelector('video');
-    console.log('My video')
-    console.log(videoElement)
     if (videoElement) {
         return videoElement.currentSrc;
     }
     return;
 }
 
-function redirectToPage(urlString) {
-    window.location.assign(urlString);
-}
 
 function listenToVideoElementLoadedIn() {
     const observerConfig = { childList:true }; 
@@ -56,6 +55,7 @@ function listenToVideoElementLoadedIn() {
                         const videoElement = node.querySelector('video')
                         if (videoElement) {
                             observer.disconnect();
+                            // Currently 403 error
                             redirectToPage(videoElement.src);
                         }
                     }
